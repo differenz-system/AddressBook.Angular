@@ -1,0 +1,9 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-center">
+            <li [routerLinkActive]="['active']"><a routerLink="/address-book">Address-List</a></li>
+            <li [routerLinkActive]="['active']"><a routerLink="/add">Add New Address</a></li>
+            <li [routerLinkActive]="['active']"><a  style="cursor: pointer;" (click)="logout()">Logout</a></li>
+        </ul>
+    </div>
+</nav>

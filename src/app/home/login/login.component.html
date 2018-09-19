@@ -1,0 +1,30 @@
+<div id="login" class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form [formGroup]="loginFormGroup" novalidate (ngSubmit)="ValidateLogin()" #formDir="ngForm">
+                <h2>Sign in</h2>
+                <hr class="colorgraph">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" required formControlName="username" placeholder="e.g. differenz">
+                    <small class="text-danger" *ngIf="username.errors && (username.dirty || username.touched)">
+                        <span *ngIf="username.errors.required">Username is Required</span>
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input name="password" id="password" formControlName="password" type="password" class="form-control"
+                        placeholder="********" />
+                    <small class="text-danger" *ngIf="password.errors && (password.dirty || password.touched)">
+                        <span *ngIf="password.errors.required">Password is required<br /></span>
+                    </small>
+                </div>
+                <hr class="colorgraph">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12"><input type="submit" value="Login" class="btn btn-primary btn-block btn-lg"
+                            tabindex="7"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
