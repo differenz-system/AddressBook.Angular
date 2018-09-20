@@ -1,12 +1,12 @@
 export class AppSettings {
 
     // Local URL
-    public static LocalURL = "http://localhost:8181/laravel-angular/public/";
-    // DIFFERENZ UAT URL
-    public static UATURL = "http://127.0.0.1:8000/laravel-angular/public/";
-
+    public static LocalURL = "http://127.0.0.1:8000/";
+    // DEVELOPMENT URL
+    public static UATURL = "http://127.0.0.1:8000/";
     // PRODUCTION  URL
-    public static ProductionURL = "";
+    public static ProductionURL = "http://127.0.0.1:8000/";
+
     public static IsLocal = true;
     public static IsDevelopment = false;
     public static IsProduction = false;
@@ -20,7 +20,6 @@ export class AppSettings {
     public static DeleteAddressBookById = AppSettings.ApiURL + 'DeleteAddressBookById';
     
     public static SetAPIURL() {
-
         if (AppSettings.IsLocal) {
             return AppSettings.LocalURL;
         }

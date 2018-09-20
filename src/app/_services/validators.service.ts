@@ -1,7 +1,5 @@
-﻿import { FormControl, Validators, NG_VALIDATORS, Validator, ValidationErrors } from '@angular/forms';
+﻿import { FormControl, NG_VALIDATORS, Validator, ValidationErrors } from '@angular/forms';
 import { Directive } from '@angular/core';
-import { StorageService } from '../_services/storage.service';
-import { Observable } from 'rxjs';
 
 export function matchValidator(fieldName: string) {
     let fcfirst: FormControl;
@@ -94,18 +92,6 @@ export class PhoneNumberValidator {
 
 export class PasswordValidator {
     static passwordFormat(control: FormControl): ValidationResult {
-        //var PASSWORD_REGEXP = new RegExp(/^(?=.[A-z])\S{8,}$/);
-        //if (control.value != null && control.value != "") {
-        //    if (!PASSWORD_REGEXP.test(control.value)) {
-        //        return { "IsInValid": true };
-        //    }
-        //    else {
-        //        return null;
-        //    }
-        //}
-        //else {
-        //    return null;
-        //}
         if (control.value != null && control.value != "") {
             if (control.value.trim() == "" || control.value.trim().length < 8) {
                 return { "IsInValid": true };
@@ -118,14 +104,6 @@ export class PasswordValidator {
 
 interface ValidationResult {
     [key: string]: boolean;
-}
-export function ValidateUrl(control: FormControl) {
-    if (control.value.toString().trim() != "") {
-        if (!control.value.startsWith('https') || !control.value.startsWith('http')) {
-            return { validUrl: true };
-        }
-    }
-    return null;
 }
 
 export class NumericValidator {
@@ -142,70 +120,5 @@ export class NumericValidator {
         else {
             return null;
         }
-    }
-}
-export class DecimalValidatorPromise {
-    static decimalFormat(control: FormControl) {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                var NUMBER_REGEXP = new RegExp(/[1-9]+(\.[0-9][0-9]?)?/);
-                if (control.value != null && control.value != '' && control.value != undefined && control.value.toString() != '') {
-                    if (!NUMBER_REGEXP.test(control.value)) {
-                        return resolve({ "IsDecimal": true });
-                    }
-                    else {
-                        return resolve(null);
-                    }
-                }
-                else {
-                    return resolve(null);
-                }
-            }, 1000);
-        })
-    }
-}
-export class DecimalValidator {
-    static decimalFormat(control: FormControl): ValidationResult {
-        var NUMBER_REGEXP = new RegExp(/[1-9]+(\.[0-9][0-9]?)?/);
-        if (control.value != null && control.value != '' && control.value != undefined && control.value.toString() != '') {
-            if (!NUMBER_REGEXP.test(control.value)) {
-                return { "IsDecimal": false };
-            }
-            else if (control.value.split != undefined && control.value.split(".").length > 2)
-            {
-                return { "IsDecimal": false };
-            }
-            else {
-                return null;
-            }
-        }
-        else {
-            return null;
-        }
-    }
-}
-export class WhitespaceValidatorPromise {
-    static noWhitespaceValidator(control: FormControl) {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                if (control.value != null && control.value != '' && control.value != undefined && control.value.toString() != '') {
-                    let isWhitespace = (control.value || '').trim().length === 0;
-                    let isValid = !isWhitespace;
-                    return isValid ? null : { 'whitespace': true }
-                }
-                return null;
-            }, 1000);
-        })
-    }
-}
-
-export class WhitespaceValidator {
-    static noWhitespaceValidator(control: FormControl): ValidationResult {
-        if (control.value != null && control.value != '' && control.value != undefined && control.value.toString() != '') {
-            let isWhitespace = (control.value || '').trim().length === 0;
-            let isValid = !isWhitespace;
-            return isValid ? null : { 'whitespace': true }
-        }
-        return null;
     }
 }

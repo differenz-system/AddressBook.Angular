@@ -1,17 +1,16 @@
-import { Component, Input, EventEmitter } from '@angular/core';
-import { EmitService } from '../../_services/emit.service';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StorageService } from '../../_services/storage.service';
 import { AddressBookService } from '../../_services/address-book.service';
 import { ToastrService } from 'ngx-toastr';
 import { HandleErrors } from '../../_services/commonFunctions';
+import { Title } from '@angular/platform-browser';
 @Component({
-    //moduleId: module.id,
     selector: 'address-list',
     templateUrl: 'address-list.component.html'
 })
 export class AddressListComponent {
-    title = 'Address List';
+    title = 'Differenz - Address List';
     addressBook: any = [];
     temp_addressBook: any = [];
     current_user_id: Number = 0;
@@ -23,16 +22,18 @@ export class AddressListComponent {
     public confirmClicked: boolean = false;
     public cancelClicked: boolean = false;
 
-    constructor(private emitService: EmitService, private storageService: StorageService, private route: ActivatedRoute, private router: Router,
+    constructor(private storageService: StorageService, private route: ActivatedRoute, private router: Router,
         private toastrService: ToastrService,
         private addressBookService: AddressBookService,
         private handleErrors: HandleErrors,
+        private titleService: Title
     ) {
         var UserDataKey = "UserData";
         let UserData: any = this.storageService.read(UserDataKey);
         if (UserData && UserData.user_id) {
             this.current_user_id = UserData.user_id;
         }
+        this.titleService.setTitle(this.title);
         this.GetAddressBookList();
     }
     Delete(address_book_id) {

@@ -1,60 +1,6 @@
 import { Injectable } from '@angular/core';
-//import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StorageService } from '../_services/storage.service';
-import { EmitService } from '../_services/emit.service';
-import { AppSettings } from '../_modals/appSettings';
-// import CryptoJS from 'crypto-js';
-// import hmacSHA256 from 'crypto-js/hmac-sha256';
-declare var $: any;
-
-@Injectable()
-export class Redirect {
-    constructor(
-        private emitService: EmitService) {
-    }
-    onClickRedirect(OrganisationId: number, redirectUrl: string): boolean {
-        var href = window.location.href;
-        if (href.indexOf("Organisation/AddSession") >= 0) {
-            let redirectData: any =
-            {
-                url: redirectUrl,
-                OrganisationId: OrganisationId
-            }
-            if (redirectUrl == "Organisation/AddSession") {
-                redirectData.SessionId = 0;
-            }
-            else if (redirectUrl == "/") // if Click on ViewDashboard then no parameters
-            {
-                redirectData.SessionId = 0;
-                redirectData.OrganisationId = 0;
-            }
-            this.emitService.emitMenuEvent(redirectData);
-            return false;
-        }
-        else if (href.indexOf("Organisation/EditOrganisation") >= 0) {
-            let redirectData: any =
-            {
-                url: redirectUrl,
-                OrganisationId: OrganisationId,
-            }
-            if (redirectUrl == "Organisation/AddSession") {
-                redirectData.SessionId = 0;
-            }
-            else if (redirectUrl == "/") // if Click on ViewDashboard then no parameters
-            {
-                redirectData.SessionId = 0;
-                redirectData.OrganisationId = 0;
-            }
-            this.emitService.emitMenuEvent(redirectData);
-            return false;
-        }
-        else {
-        }
-        return true;
-    }
-}
-
 
 @Injectable()
 export class HandleErrors {

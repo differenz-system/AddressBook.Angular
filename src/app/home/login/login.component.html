@@ -5,10 +5,10 @@
                 <h2>Sign in</h2>
                 <hr class="colorgraph">
                 <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" class="form-control" required formControlName="username" placeholder="e.g. differenz">
-                    <small class="text-danger" *ngIf="username.errors && (username.dirty || username.touched)">
-                        <span *ngIf="username.errors.required">Username is Required</span>
+                    <label>Email ID</label>
+                    <input type="text" class="form-control" required formControlName="email_id" placeholder="e.g. team@differenz.co.in">
+                    <small class="text-danger" *ngIf="email_id.errors && (email_id.dirty || email_id.touched)">
+                        <span *ngIf="email_id.errors.required">Email ID is Required</span>
                     </small>
                 </div>
                 <div class="form-group">

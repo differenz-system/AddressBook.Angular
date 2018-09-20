@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 @Injectable()
 export class StorageService {
-    // call using this string
-    //someToken = this.storageService.read<string>('my-token');
     write(key: string, value: any) {
         key = btoa(key);
-        
         value = JSON.stringify(value);
         value = btoa(value);
         localStorage.setItem(key, value);

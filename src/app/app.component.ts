@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { StorageService } from './_services/storage.service';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
-  // moduleId: module.id,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

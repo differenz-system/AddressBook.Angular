@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
 import { HandleErrors } from '../../_services/commonFunctions';
 import { EmailValidator, PasswordValidator, matchValidator, } from '../../_services/validators.service';
 import { ToastrService } from 'ngx-toastr';
+import { Title } from '@angular/platform-browser';
 @Component({
-  //moduleId: module.id,
   selector: 'app-register',
   templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
 
-  title = 'Welcome';
+  title = 'Differenz - Register';
 
   registerFormGroup: FormGroup;
   first_name: FormControl;
@@ -22,16 +22,16 @@ export class RegisterComponent implements OnInit {
   email_id: FormControl;
   password: FormControl;
   confirm_password: FormControl;
-  username: FormControl;
 
   public errorMessage: String;
   constructor(private router: Router,
     private handleErrors: HandleErrors,
     private accountService: AccountService,
     private storageService: StorageService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private titleService: Title
   ) {
-
+    this.titleService.setTitle(this.title);
   }
   ngOnInit() {
     this.createFormControls();
@@ -43,7 +43,6 @@ export class RegisterComponent implements OnInit {
     }
   }
   createFormControls() {
-    this.username = new FormControl('', [Validators.required]);
     this.password = new FormControl('', [Validators.required, PasswordValidator.passwordFormat]);
     this.confirm_password = new FormControl('', [matchValidator('password'), Validators.required]);
 
@@ -55,7 +54,6 @@ export class RegisterComponent implements OnInit {
     this.registerFormGroup = new FormGroup({
       first_name: this.first_name,
       last_name: this.last_name,
-      username: this.username,
       email_id: this.email_id,
       password: this.password,
       confirm_password: this.confirm_password,
@@ -71,7 +69,7 @@ export class RegisterComponent implements OnInit {
             this.ResetForm();
             var UserDataKey = "UserData";
             this.storageService.write(UserDataKey, Data.data);
-            this.router.navigate(['']);
+            this.router.navigate(['address-book']);
           }
           else {
             this.toastrService.error(Data.msg);
@@ -87,7 +85,6 @@ export class RegisterComponent implements OnInit {
       this.registerFormGroup.controls['email_id'].markAsTouched();
       this.registerFormGroup.controls['password'].markAsTouched();
       this.registerFormGroup.controls['confirm_password'].markAsTouched();
-      this.registerFormGroup.controls['username'].markAsTouched();
     }
   }
 }

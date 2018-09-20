@@ -6,26 +6,27 @@ import { StorageService } from '../../_services/storage.service';
 import { Router } from '@angular/router';
 import { HandleErrors } from '../../_services/commonFunctions';
 import { ToastrService } from 'ngx-toastr';
-
+import { Title } from '@angular/platform-browser';
 @Component({
-  //moduleId: module.id,
   selector: 'app-login',
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
 
-  title = 'Welcome';
+  title = 'Differenz - Login';
 
   loginFormGroup: FormGroup;
-  username: FormControl;
+  email_id: FormControl;
   password: FormControl;
   public errorMessage: String;
   constructor(private router: Router,
     private handleErrors: HandleErrors,
     private accountService: AccountService,
     private storageService: StorageService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private titleService: Title
   ) {
+    this.titleService.setTitle(this.title);
   }
   ngOnInit() {
     this.createFormControls();
@@ -37,12 +38,12 @@ export class LoginComponent implements OnInit {
     }
   }
   createFormControls() {
-    this.username = new FormControl('', [Validators.required]);
+    this.email_id = new FormControl('', [Validators.required]);
     this.password = new FormControl('', [Validators.required]);
   }
   createForm() {
     this.loginFormGroup = new FormGroup({
-      username: this.username,
+      email_id: this.email_id,
       password: this.password
     });
   }
@@ -67,7 +68,7 @@ export class LoginComponent implements OnInit {
           });
     }
     else {
-      this.loginFormGroup.controls['username'].markAsTouched();
+      this.loginFormGroup.controls['email_id'].markAsTouched();
       this.loginFormGroup.controls['password'].markAsTouched();
     }
   }

@@ -3,14 +3,13 @@ import { Router } from '@angular/router';
 import { StorageService } from '../../_services/storage.service';
 import { AddressBookService } from '../../_services/address-book.service';
 import { ToastrService } from 'ngx-toastr';
-import { FormGroup, FormControl, Validators, FormsModule, NgForm } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EmailValidator } from '../../_services/validators.service';
 import { HandleErrors } from '../../_services/commonFunctions';
-import { AddressBookModel } from '../../_modals/adress-book';
+import { AddressBookModel } from '../../_modals/address-book';
 import { ActivatedRoute } from "@angular/router";
-
+import { Title } from '@angular/platform-browser';
 @Component({
-    //moduleId: module.id,
     selector: 'add-address-book.',
     templateUrl: 'add-address-book.component.html'
 })
@@ -31,19 +30,22 @@ export class AddAddressComponent implements OnInit {
         private toastrService: ToastrService,
         private handleErrors: HandleErrors,
         private addressBookService: AddressBookService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private titleService: Title
     ) {
         var that = this;
         this.route.params.subscribe(function (params) {
             if (params && params.id) {
                 that.title = 'Update Address';
-                that.current_address_book_id =Number(params.id);
+                that.current_address_book_id = Number(params.id);
                 that.GetDataForEdit();
             }
             else {
                 this.current_address_book_id = 0;
             }
         });
+
+        this.titleService.setTitle('Differenz - Add New Address');
     }
     ngOnInit() {
         var UserDataKey = "UserData";
