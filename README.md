@@ -1,6 +1,6 @@
 # AngularApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
 ## Development server
 
@@ -34,3 +34,26 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![Registration Page](http://differenzuat.com/angular-images/registration-page.png)
 ![Address Book Listing](http://differenzuat.com/angular-images/address-list.png)
 ![Add Address](http://differenzuat.com/angular-images/add-address.png)
+## Front end
+Installation
+npm install (installing dependencies)
+npm outdated (verifying dependencies)
+Developpement
+npm run start
+in your browser http://localhost:4200
+
+## Tests
+npm run lint
+npm run test
+npm run e2e
+## Tests prerequisites
+ChromeDriver only supports Chrome version 89
+## Compilation
+npm run build ( without SSR)
+npm run build:ssr ( with SSR)
+## Production
+npm run serve:ssr
+in your browser http://localhost:4200
+## Bootstrap UI Prototypes
+change directory cd ui (Bootstrap 4) or ui-v5 (Bootstrap 5)
+Launch html pages in your browser

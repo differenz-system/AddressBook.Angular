@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
             { path: '', loadChildren: './main/inner.module#InnerModule' },
             // otherwise redirect to home
             { path: '**', redirectTo: 'home/welcome' }
-        ], { useHash: true })
+        ], { useHash: true, relativeLinkResolution: 'legacy' })
     ],
     exports: [
         RouterModule

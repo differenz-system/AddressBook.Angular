@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class LandingPageComponent   {
   title = 'Differenz - Welcome';
-  msg ='Welcome to Differenz Angular 6 Demo App.'
+  msg ='Welcome to Differenz Angular 11 Demo App.'
   constructor(private titleService: Title) {
     this.titleService.setTitle(this.title);
   }
