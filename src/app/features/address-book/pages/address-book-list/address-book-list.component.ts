@@ -12,15 +12,15 @@ import { AddressBookService } from '../../address-book.service';
 
 
 @Component({
-  selector: 'app-address-book-list',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    ...MATERIAL_MODULES
-  ],
-  templateUrl: './address-book-list.component.html',
-  styleUrls: ['./address-book-list.component.scss']
+    selector: 'app-address-book-list',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        ...MATERIAL_MODULES
+    ],
+    standalone: true,
+    templateUrl: './address-book-list.component.html',
+    styleUrls: ['./address-book-list.component.scss']
 })
 export class AddressBookListComponent implements OnInit {
 

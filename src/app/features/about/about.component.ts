@@ -4,15 +4,15 @@ import { MATERIAL_MODULES } from 'src/app/shared/material.module';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-about',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    ...MATERIAL_MODULES
-  ],
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+    selector: 'app-about',
+    imports: [
+        CommonModule,
+        RouterModule,
+        ...MATERIAL_MODULES
+    ],
+    standalone: true,
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
   contact() {
