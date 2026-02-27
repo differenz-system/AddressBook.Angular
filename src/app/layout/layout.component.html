@@ -1,0 +1,81 @@
+<mat-sidenav-container class="layout-container">
+
+    <!-- SIDEBAR -->
+    <mat-sidenav #sidenav mode="side" [opened]="isSidebarOpen" class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo-section">
+            <div class="logo-badge">
+                <mat-icon>menu_book</mat-icon>
+            </div>
+
+            <div *ngIf="isSidebarOpen" class="logo-text">
+                <span class="brand-name">AddressBook</span>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Navigation -->
+        <mat-nav-list class="nav-list">
+
+            <a mat-list-item routerLink="/welcome" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+                <mat-icon matListItemIcon>home</mat-icon>
+                <span matListItemTitle *ngIf="isSidebarOpen">Home</span>
+            </a>
+
+            <a mat-list-item routerLink="/address-book" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+                <mat-icon matListItemIcon>contacts</mat-icon>
+                <span matListItemTitle *ngIf="isSidebarOpen">Address Book</span>
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+
+
+    <!-- MAIN CONTENT -->
+    <mat-sidenav-content>
+
+        <!-- TOPBAR -->
+        <mat-toolbar class="topbar">
+
+            <!-- Toggle Button -->
+            <button mat-icon-button (click)="toggleSidebar()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <span class="page-title">{{ pageTitle }}</span>
+
+            <span class="spacer"></span>
+
+            <!-- Profile Dropdown -->
+            <button mat-button [matMenuTriggerFor]="profileMenu" class="profile-btn">
+                <mat-icon>account_circle</mat-icon>
+                <span>Profile</span>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+
+            <mat-menu #profileMenu="matMenu">
+                <!-- <button mat-menu-item>
+          <mat-icon>person</mat-icon>
+          My Profile
+        </button> -->
+
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>logout</mat-icon>
+                    Logout
+                </button>
+            </mat-menu>
+
+        </mat-toolbar>
+
+        <!-- Page Content -->
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

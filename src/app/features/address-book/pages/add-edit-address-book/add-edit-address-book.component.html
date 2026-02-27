@@ -1,0 +1,93 @@
+<div class="page-container">
+
+  <!-- Page Title Section -->
+  <div class="page-header">
+    <div>
+      <h2>{{ currentId() ? 'Edit Address' : 'Add New Address' }}</h2>
+      <p class="page-subtitle">
+        {{ currentId()
+        ? 'Update address book details below.'
+        : 'Enter details to create a new address entry.' }}
+      </p>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <!-- Form Card -->
+  <mat-card class="address-card">
+
+    <form [formGroup]="form" (ngSubmit)="save()">
+
+      <div class="form-grid">
+
+        <!-- First Name -->
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" />
+          <mat-error *ngIf="form.get('firstName')?.hasError('required')">
+            First name is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Last Name -->
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" />
+          <mat-error *ngIf="form.get('lastName')?.hasError('required')">
+            Last name is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput type="email" formControlName="emailId" />
+
+          <mat-error *ngIf="form.get('emailId')?.hasError('required')">
+            Email is required
+          </mat-error>
+
+          <mat-error *ngIf="form.get('emailId')?.hasError('email')">
+            Enter a valid email address
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Contact Number -->
+        <mat-form-field appearance="outline">
+          <mat-label>Contact Number</mat-label>
+          <input matInput formControlName="contactNo" />
+
+          <mat-error *ngIf="form.get('contactNo')?.hasError('required')">
+            Contact number is required
+          </mat-error>
+
+          <mat-error *ngIf="form.get('contactNo')?.hasError('pattern')">
+            Enter a valid phone number
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+
+      <div class="status-section">
+        <mat-slide-toggle formControlName="isActive">
+          Active Status
+        </mat-slide-toggle>
+      </div>
+
+      <div class="button-group">
+        <button mat-stroked-button type="button" (click)="cancel()">
+          Cancel
+        </button>
+
+        <button mat-raised-button color="primary" type="submit">
+          {{ currentId() ? 'Update Address' : 'Save Address' }}
+        </button>
+      </div>
+
+    </form>
+
+  </mat-card>
+
+</div>

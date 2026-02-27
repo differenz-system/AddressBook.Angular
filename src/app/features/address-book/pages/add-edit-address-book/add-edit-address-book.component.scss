@@ -1,0 +1,46 @@
+.page-container {
+  padding: 0;          /* remove extra outer padding */
+  background: transparent;
+}
+
+/* Header */
+.page-header {
+  margin-bottom: 15px;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.page-subtitle {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Card */
+.address-card {
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.status-section {
+  margin-top: 20px;
+}
+
+.button-group {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}

@@ -1,0 +1,35 @@
+<div class="welcome-container">
+
+  <!-- Header -->
+  <div class="welcome-header">
+    <img 
+      src="assets/Images/differenz.png" 
+      alt="Differenz Logo"
+      class="welcome-logo">
+
+    <h1>Welcome to Differenz Angular Demo</h1>
+    <p class="subtitle">
+      Manage your contacts efficiently with a clean and modern interface.
+    </p>
+  </div>
+
+  <!-- Options -->
+  <div class="welcome-options">
+
+    <!-- Contact -->
+    <mat-card class="welcome-card" (click)="contact()">
+      <mat-icon>mail</mat-icon>
+      <h3>Contact Us</h3>
+      <p>Reach out to our team for inquiry.</p>
+    </mat-card>
+
+    <!-- Website -->
+    <mat-card class="welcome-card" (click)="visitWebsite()">
+      <mat-icon>language</mat-icon>
+      <h3>Visit Our Website</h3>
+      <p>Explore more about Differenz.</p>
+    </mat-card>
+
+  </div>
+
+</div>

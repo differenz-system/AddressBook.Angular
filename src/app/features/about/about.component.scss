@@ -1,0 +1,80 @@
+.about-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+  padding: 20px;
+}
+
+.about-card {
+  width: 500px;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.about-header {
+  margin-bottom: 30px;
+}
+
+.about-icon {
+  font-size: 48px;
+  color: #3f51b5;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  color: #555;
+  margin-top: 8px;
+}
+
+.about-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.about-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  background: #fafafa;
+}
+
+.about-option mat-icon {
+  font-size: 28px;
+  color: #3f51b5;
+}
+
+.about-option:hover {
+  background: rgba(63, 81, 181, 0.08);
+  transform: translateY(-3px);
+}
+
+.about-option h3 {
+  margin: 0;
+  text-align: left;
+}
+
+.about-option p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.about-footer {
+  margin-top: 10px;
+}
+
+.about-logo {
+  height: 80px;       /* fixed height */
+  width: auto;        /* keeps aspect ratio */
+  object-fit: contain;
+  margin-bottom: 16px;
+}

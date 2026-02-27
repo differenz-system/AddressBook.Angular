@@ -1,0 +1,43 @@
+<div class="about-wrapper">
+
+  <mat-card class="about-card">
+
+    <!-- Header -->
+    <div class="about-header">
+      <img alt="differenz logo" class="about-logo" src="assets/Images/differenz.png">
+      <h2>About Us</h2>
+    </div>
+
+    <!-- Options -->
+    <div class="about-options">
+
+      <!-- Contact -->
+      <div class="about-option" (click)="contact()">
+        <mat-icon>mail</mat-icon>
+        <div>
+          <h3>Contact Us</h3>
+          <p>Reach out for inquiries.</p>
+        </div>
+      </div>
+
+      <!-- Website -->
+      <div class="about-option" (click)="visitWebsite()">
+        <mat-icon>language</mat-icon>
+        <div>
+          <h3>Visit Our Website</h3>
+          <p>Learn more about our services.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="about-footer">
+      <button mat-stroked-button color="primary" routerLink="/auth/login">
+        Back to Login
+      </button>
+    </div>
+
+  </mat-card>
+
+</div>

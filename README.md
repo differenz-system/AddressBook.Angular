@@ -1,59 +1,62 @@
-# AngularApp
+# AddressBookAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+Address Book web application built with Angular 16.  
+This application allows users to manage their personal contacts with add, edit, update, and list functionality using REST APIs.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run:
 
-## Code scaffolding
+`ng serve`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Navigate to:
+
+`http://localhost:4200/`
+
+The application will automatically reload if you change any of the source files.
+
+## Features
+
+- User-based address listing
+- Add new address
+- Edit and update existing address
+- Reactive form validation
+- Email and 10-digit contact validation
+- Active / Inactive status management
+- REST API integration using Angular HttpClient
+
+## Tech Stack
+
+- Angular 16
+- Angular Router
+- Reactive Forms
+- RxJS
+- Angular Material
+- REST API (Node.js / Express)
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run:
+
+`ng build`
+
+The build artifacts will be stored in the `dist/` directory.
+
+For production build:
+
+`ng build --configuration production`
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+`ng test`
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular CLI use:
 
+`ng help`
 
-## Screen shots of pages
-
-![Home Page](http://differenzuat.com/angular-images/home-page.png)
-![Login Page](http://differenzuat.com/angular-images/login-page.png)
-![Registration Page](http://differenzuat.com/angular-images/registration-page.png)
-![Address Book Listing](http://differenzuat.com/angular-images/address-list.png)
-![Add Address](http://differenzuat.com/angular-images/add-address.png)
-## Front end
-Installation
-npm install (installing dependencies)
-npm outdated (verifying dependencies)
-Developpement
-npm run start
-in your browser http://localhost:4200
-
-## Tests
-npm run lint
-npm run test
-npm run e2e
-## Tests prerequisites
-ChromeDriver only supports Chrome version 89
-## Compilation
-npm run build ( without SSR)
-npm run build:ssr ( with SSR)
-## Production
-npm run serve:ssr
-in your browser http://localhost:4200
-## Bootstrap UI Prototypes
-change directory cd ui (Bootstrap 4) or ui-v5 (Bootstrap 5)
-Launch html pages in your browser
+Or check the Angular CLI documentation:  
+https://angular.io/cli

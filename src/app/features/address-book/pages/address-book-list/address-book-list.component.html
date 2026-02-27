@@ -1,0 +1,73 @@
+<div class="page-header">
+  <div>
+    <h2>Address Book</h2>
+    <p class="page-subtitle">Manage your saved contacts</p>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="addNew()">
+    <mat-icon>add</mat-icon>
+    Add Address
+  </button>
+</div>
+
+<mat-card class="table-card">
+
+  <!-- Search -->
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search</mat-label>
+    <input matInput [formControl]="searchControl" placeholder="Search by name or email" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <!-- Table -->
+  <table mat-table [dataSource]="dataSource.data" class="mat-elevation-z0">
+
+    <!-- First Name -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let row"> {{ row.name }} </td>
+    </ng-container>
+
+
+    <!-- Email -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let row"> {{ row.email }} </td>
+    </ng-container>
+
+    <!-- Phone -->
+    <ng-container matColumnDef="contact_number">
+      <th mat-header-cell *matHeaderCellDef> Phone </th>
+      <td mat-cell *matCellDef="let row"> {{ row.contact_number }} </td>
+    </ng-container>
+
+    <!-- Active -->
+    <ng-container matColumnDef="is_active">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let row">
+        <span class="status" [class.active]="row.is_active">
+          {{ row.is_active ==0 ? 'Active' : 'Inactive' }}
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- Actions -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button color="primary" (click)="edit(row)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" (click)="delete(row)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+</mat-card>

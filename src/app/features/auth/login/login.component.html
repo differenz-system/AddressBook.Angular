@@ -1,0 +1,55 @@
+<div class="login-wrapper">
+
+  <mat-card class="login-card">
+
+    <div class="login-header">
+      <h2>Welcome Back</h2>
+      <p>Please login to continue</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="validateLogin()">
+
+      <!-- Email -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+          Enter valid email
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Button -->
+      <button mat-raised-button color="primary" type="submit" class="full-width login-btn" [disabled]="isLoading()">
+        <mat-progress-spinner *ngIf="isLoading()" diameter="20" mode="indeterminate">
+        </mat-progress-spinner>
+
+        <span *ngIf="!isLoading()">Login</span>
+      </button>
+
+    </form>
+
+    <div class="login-footer">
+      <div class="divider"></div>
+      <div class="register-row">
+        <span>Don't have an account?</span>
+        <a routerLink="/auth/register">Register</a>
+      </div>
+
+      <a routerLink="/about">About Us</a>
+    </div>
+
+  </mat-card>
+
+</div>
