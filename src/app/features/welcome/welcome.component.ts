@@ -4,14 +4,13 @@ import { MATERIAL_MODULES } from 'src/app/shared/material.module';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-welcome',
-  standalone: true,
-  imports: [CommonModule,
-    RouterModule,
-    ...MATERIAL_MODULES
-  ],
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.scss']
+    selector: 'app-welcome',
+    imports: [CommonModule,
+        RouterModule,
+        ...MATERIAL_MODULES
+    ],
+    templateUrl: './welcome.component.html',
+    styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent {
   contact() {

@@ -9,16 +9,16 @@ import { AuthService } from '../auth.service';
 import { RegisterRequest } from 'src/app/core/models/auth.model';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule,
-    ...MATERIAL_MODULES
-  ],
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+    selector: 'app-register',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        RouterModule,
+        ...MATERIAL_MODULES
+    ],
+    standalone: true,
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
 

@@ -6,15 +6,15 @@ import { filter, map } from 'rxjs';
 import { AuthService } from '../features/auth/auth.service';
 
 @Component({
-  selector: 'app-layout',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    ...MATERIAL_MODULES
-  ],
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+    selector: 'app-layout',
+    imports: [
+        CommonModule,
+        RouterModule,
+        ...MATERIAL_MODULES
+    ],
+    standalone: true,
+    templateUrl: './layout.component.html',
+    styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent {
   pageTitle = '';

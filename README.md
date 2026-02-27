@@ -1,62 +1,132 @@
-# AddressBookAngular
+# 📘 AddressBookAngular
 
-Address Book web application built with Angular 16.  
-This application allows users to manage their personal contacts with add, edit, update, and list functionality using REST APIs.
+Address Book web application built with **Angular 20**.
+This application allows users to manage personal contacts with add, edit, update, and list functionality using REST APIs.
 
-## Development server
+---
 
-Run:
+## 🚀 Features
 
-`ng serve`
+* User-based address listing
+* Add new address
+* Edit and update existing address
+* Reactive form validation
+* Email validation
+* 10-digit contact number validation
+* Active / Inactive status management
+* REST API integration using Angular HttpClient
+* Angular Material UI
 
-Navigate to:
+---
 
-`http://localhost:4200/`
+## 🛠 Tech Stack
 
-The application will automatically reload if you change any of the source files.
+* Angular 20
+* Angular Router
+* Reactive Forms
+* RxJS
+* Angular Material
+* TypeScript
+* REST API (Node.js / Express)
 
-## Features
+---
 
-- User-based address listing
-- Add new address
-- Edit and update existing address
-- Reactive form validation
-- Email and 10-digit contact validation
-- Active / Inactive status management
-- REST API integration using Angular HttpClient
+## 📦 Installation
 
-## Tech Stack
+### 1️⃣ Clone the repository
 
-- Angular 16
-- Angular Router
-- Reactive Forms
-- RxJS
-- Angular Material
-- REST API (Node.js / Express)
+```bash
+git clone 
+cd AddressBookAngular
+```
 
-## Build
+### 2️⃣ Install dependencies
 
-Run:
+```bash
+npm install
+```
 
-`ng build`
+---
 
-The build artifacts will be stored in the `dist/` directory.
+## ▶️ Development Server
 
-For production build:
+```bash
+ng serve
+```
 
-`ng build --configuration production`
+Open in browser:
 
-## Running unit tests
+```
+http://localhost:4200/
+```
 
-Run:
+---
 
-`ng test`
+## 🏗 Build
 
-## Further help
+```bash
+ng build
+```
 
-To get more help on the Angular CLI use:
+Production build:
 
-`ng help`
+```bash
+ng build --configuration production
+```
 
-Or check the Angular CLI documentation:  
-https://angular.io/cli
+---
+
+## 🧪 Running Unit Tests
+
+```bash
+ng test
+```
+
+---
+
+## ⚙️ Requirements
+
+* Node.js 20+
+* Angular CLI 20+
+
+Check versions:
+
+```bash
+node -v
+ng version
+```
+
+---
+
+## 📡 API Configuration
+
+Edit:
+
+```
+src/environments/environment.ts
+```
+
+Example:
+
+```ts
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8800'
+};
+```
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── app/
+ │   ├── components/
+ │   ├── pages/
+ │   ├── services/
+ │   └── models/
+ ├── assets/
+ ├── environments/
+```
+

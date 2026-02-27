@@ -10,17 +10,16 @@ import { AddressBook } from 'src/app/core/models/address-book.model';
 
 
 @Component({
-  selector: 'app-add-edit-address-book',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule,
-
-    ...MATERIAL_MODULES
-  ],
-  templateUrl: './add-edit-address-book.component.html',
-  styleUrls: ['./add-edit-address-book.component.scss']
+    selector: 'app-add-edit-address-book',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        RouterModule,
+        ...MATERIAL_MODULES
+    ],
+    standalone: true,
+    templateUrl: './add-edit-address-book.component.html',
+    styleUrls: ['./add-edit-address-book.component.scss']
 })
 export class AddEditAddressBookComponent implements OnInit {
 
